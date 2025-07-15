@@ -18,13 +18,24 @@
 
 <?php
 
-$i = 1;
-$numero = $_POST['numero_par'];
-$resultado = $numero * $i;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        if(isset($_POST['Verificar_numero'])){
+            
+            $i = 1;
+              $numero = $_POST['numero_par'];
+
+              
 
     for($i = 1; $i <=10 ; $i++){
-        echo "<p>$numero x $i = $resultado</p>";
+        $resultado = $numero * $i;
+        echo "<p>$numero * $i = $resultado</p>";
     };
+
+            
+        }
+    }
+
 
 
 ?>

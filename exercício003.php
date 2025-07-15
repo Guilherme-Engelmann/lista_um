@@ -9,7 +9,7 @@
 <body>
     <form method="POST" action="">
 
-        <label for="numero_par">Digite um número para a tabuada</label>
+        <label for="numero_par">Digite um Número</label>
         <input type="number" id="numero_par" name="numero_par" required>
         <button type="submit" name="Verificar_numero">Verificar</button>
 
@@ -19,8 +19,11 @@
 </html>
 
 <?php
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-$numero = $_POST['numero_par'];
+        if(isset($_POST['Verificar_numero'])){
+            
+            $numero = $_POST['numero_par'];
 
 if ($numero > 0) {
     echo 'Seu número é positivo';
@@ -29,6 +32,11 @@ if ($numero > 0) {
 }else{
     echo 'Seu número é zero';
 };
+        }
+    }
+
+
+
  
 
 ?>
