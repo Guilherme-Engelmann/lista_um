@@ -5,31 +5,25 @@
     <title>Document</title>
 </head>
 <body>
-     <form method="POST" action="">
-
-        <label for="fatorial">Digite um Número</label>
-        <input type="number" id="fatorial" name="fatorial" required>
-        <button type="submit" name="V_fatorial">Verificar</button>
-
+    <form method="GET" action="">
+        <label for="numero">Digite um número:</label>
+        <input type="number" name="numero" id="numero" required>
+        <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
-<?php
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    <?php
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+        if (isset($_GET['numero'])) {
+            $numero = $_GET['numero'];
 
-        if(isset($_POST['v_fatorial'])){
-
-            $numero = $_POST['fatorial'];
-            
-            for($i = 1; $i < $umero; $i++) {
-        if ($numero % 2 == 0) {
-            echo 'O número é par';
-        }else{
-            echo 'Esse número não é par';
-        }
+            if ($numero % 2 == 0) {
+                echo "O número $numero é par.";
+            } else {
+                echo "O número $numero é ímpar.";
+            }
+        } 
     }
-        }
-    }
-
 ?>
