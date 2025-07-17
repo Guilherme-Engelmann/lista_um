@@ -7,10 +7,29 @@
 <body>
      <form method="POST" action="">
 
-        <label for="numero_par">Digite um Número</label>
-        <input type="number" id="numero_par" name="numero_par" required>
-        <button type="submit" name="Verificar_numero">Verificar</button>
+        <label for="fatorial">Digite um Número</label>
+        <input type="number" id="fatorial" name="fatorial" required>
+        <button type="submit" name="V_fatorial">Verificar</button>
 
     </form>
 </body>
 </html>
+<?php
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        if(isset($_POST['v_fatorial'])){
+
+            $numero = $_POST['fatorial'];
+            
+            for($i = 1; $i < $umero; $i++) {
+        if ($numero % 2 == 0) {
+            echo 'O número é par';
+        }else{
+            echo 'Esse número não é par';
+        }
+    }
+        }
+    }
+
+?>
